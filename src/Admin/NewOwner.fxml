@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="367.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.NewOwnerController">
+   <children>
+      <Label layoutX="37.0" layoutY="60.0" text="Name:" />
+      <Label layoutX="37.0" layoutY="97.0" text="Username:" />
+      <Label layoutX="39.0" layoutY="132.0" text="Password:" />
+      <Label layoutX="31.0" layoutY="167.0" text="Phone number:" />
+      <TextField fx:id="owner_name" layoutX="120.0" layoutY="56.0" promptText="First and Family name" />
+      <TextField fx:id="owner_username" layoutX="120.0" layoutY="93.0" promptText="Username" />
+      <TextField fx:id="owner_password" layoutX="120.0" layoutY="128.0" promptText="Password" />
+      <TextField fx:id="owner_phone" layoutX="120.0" layoutY="163.0" promptText="Phone number" />
+      <Button fx:id="addnewowner" layoutX="231.0" layoutY="243.0" mnemonicParsing="false" onAction="#AddOwner" text="Add" />
+      <Label layoutX="51.0" layoutY="204.0" text="Hotel:" />
+      <ComboBox fx:id="hotel_combobox" layoutX="120.0" layoutY="200.0" onAction="#initialize" prefWidth="150.0" promptText="Choose hotel" />
+   </children>
+</AnchorPane>
