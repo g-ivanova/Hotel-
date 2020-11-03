@@ -10,10 +10,10 @@
    <children>
       <Label layoutX="14.0" layoutY="21.0" text="DB Status" />
       <Label fx:id="dbstatus" layoutX="88.0" layoutY="21.0" prefHeight="17.0" prefWidth="111.0" />
-      <TextField fx:id="username" layoutX="88.0" layoutY="84.0" />
+      <TextField fx:id="username" layoutX="88.0" layoutY="84.0" promptText="username" />
       <Label layoutX="14.0" layoutY="88.0" text="Username" />
       <Label layoutX="14.0" layoutY="143.0" text="Password" />
-      <PasswordField fx:id="password" layoutX="88.0" layoutY="131.0" />
+      <PasswordField fx:id="password" layoutX="88.0" layoutY="131.0" promptText="password" />
       <Button fx:id="loginButton" layoutX="175.0" layoutY="187.0" mnemonicParsing="false" onAction="#Login" text="Connect" />
       <Label fx:id="loginstatus" layoutX="25.0" layoutY="191.0" prefHeight="17.0" prefWidth="99.0" />
    </children>
