@@ -71,7 +71,7 @@ public class LoginController implements Initializable {
                        if (user_name.equals(username.getText()) && pass.equals(password.getText())) {
                            Stage stage = (Stage) this.loginButton.getScene().getWindow();
                            stage.close();
-                           String UID = query.getString("Position_ID"); //Get user ID of the user
+                           String UID = query.getString("id_position"); //Get user ID of the user
                            switch (UID) {
                                case "1":
                                    AdminLogin();
