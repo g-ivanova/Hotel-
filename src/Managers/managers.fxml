@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Managers.ManagerController">
+   <children>
+      <TableView fx:id="reservations_tableview" layoutX="233.0" layoutY="155.0" prefHeight="630.0" prefWidth="760.0" style="-fx-background-color: #E6E6FA;" />
+      <Pane prefHeight="791.0" prefWidth="231.0" style="-fx-background-color: #ADD8E6;">
+         <children>
+            <Pane layoutX="6.0" layoutY="369.0" prefHeight="139.0" prefWidth="217.0" style="-fx-background-color: #5F9EA0;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="TOP" layoutX="22.0" layoutY="8.0" prefHeight="30.0" prefWidth="186.0" text="RECEPTIONIST:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="receptionists_combobox" layoutX="30.0" layoutY="44.0" onAction="#receptionists_combobox_on_action" prefWidth="150.0" promptText="Choose:" />
+                  <Button fx:id="info_receptionist_button" layoutX="3.0" layoutY="80.0" mnemonicParsing="false" onAction="#info_receptionist_button_on_action" prefHeight="39.0" prefWidth="75.0" text="Info">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="reservations_receptionist_button" layoutX="83.0" layoutY="81.0" mnemonicParsing="false" onAction="#reservations_receptionist_button_on_action" prefHeight="38.0" prefWidth="128.0" text="Reservations">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="19.0" layoutY="14.0" prefHeight="123.0" prefWidth="197.0" style="-fx-background-color: #5F9EA0;">
+               <children>
+                  <Button fx:id="add_receotionist_button" layoutX="28.0" layoutY="33.0" mnemonicParsing="false" onAction="#add_receptionist_button_on_action" text="Add Receptionist">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_service_button" layoutX="27.0" layoutY="77.0" mnemonicParsing="false" onAction="#add_service_button_on_action" prefHeight="31.0" prefWidth="142.0" text="Add Service">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="78.0" layoutY="7.0" text="ADD:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="19.0" layoutY="160.0" prefHeight="185.0" prefWidth="197.0" style="-fx-background-color: #5F9EA0;">
+               <children>
+                  <Button fx:id="view_client_rating_button" layoutX="12.0" layoutY="34.0" mnemonicParsing="false" onAction="#view_client_rating_button_on_action" prefHeight="39.0" prefWidth="173.0" text="View Client Rating">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="view_room_rating_button" layoutX="12.0" layoutY="86.0" mnemonicParsing="false" onAction="#view_room_rating_button_on_action" prefHeight="39.0" prefWidth="173.0" text="View Room Rating">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="64.0" layoutY="8.0" text="RATING:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="view_service_rating_button" layoutX="12.0" layoutY="138.0" mnemonicParsing="false" onAction="#view_service_rating_button_on_action" prefHeight="39.0" prefWidth="173.0" text="View Service Rating">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+            <Pane layoutX="9.0" layoutY="522.0" prefHeight="139.0" prefWidth="217.0" style="-fx-background-color: #5F9EA0;">
+               <children>
+                  <Label layoutX="72.0" layoutY="8.0" text="CLIENT:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="info_client_button" layoutX="2.0" layoutY="81.0" mnemonicParsing="false" onAction="#info_client_button_on_action" prefHeight="39.0" prefWidth="75.0" text="Info">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="reservations_client_button" layoutX="85.0" layoutY="81.0" mnemonicParsing="false" onAction="#reservations_client_button_on_action" text="Reservations">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="clients_combobox" layoutX="26.0" layoutY="38.0" onAction="#clients_combobox_on_action" prefWidth="150.0" promptText="Choose:" />
+               </children>
+            </Pane>
+         </children></Pane>
+      <ImageView fx:id="imageview" fitHeight="139.0" fitWidth="658.0" layoutX="239.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="logout_button" layoutX="60.0" layoutY="740.0" mnemonicParsing="false" onAction="#logout_button_on_action" style="-fx-background-color: #007399;" text="LOG OUT" textFill="#b3ecff">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Button>
+      <Button fx:id="all_reservations_button" layoutX="30.0" layoutY="680.0" mnemonicParsing="false" onAction="#all_reservations_button_on_action" text="All Reservations">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
