@@ -803,4 +803,45 @@ public class ManagerController {
 
         return empty;
     }
+    
+      public static void notifications_client() {
+        DBConnection connect = new DBConnection();
+        Connection connection = connect.getConnection();
+        try {
+            String manager_id = "Select id_hotel from hotel_users where id_user = '" + LoginController.user.getId_user() + "'";
+            Statement statement2 = connection.createStatement();
+            ResultSet query2 = statement2.executeQuery(manager_id);
+
+            while (query2.next()) {
+                int id_hotel = query2.getInt("id_hotel");
+
+                String sql = "SELECT id_client from reservations where id_hotel='" + id_hotel + "' Group by id_client";
+                Statement statement = connection.createStatement();
+                ResultSet query = statement.executeQuery(sql);
+
+                while (query.next()) {
+                    int client=query.getInt("id_client");
+                    Client clients=new Client();
+                    clients.setId_client(client);
+                    int count_res=Managers.ViewClientRatingController.get_count_reservations(client);
+                    String countres=String.valueOf(count_res);
+                    int count_ser=Managers.ViewClientRatingController.get_count_services(client);
+                    String countser=String.valueOf(count_ser);
+                    int rating=Managers.ViewClientRatingController.get_rating(countres,countser);
+                    if(rating<200){
+                        Notifications notificationBuilder = Notifications.create()
+                                .title("Risky Client")
+                                .text("Reservation with ID " + query.getInt("id_client") + " is made from risky client!")
+                                .graphic(null)
+                                .hideAfter(Duration.seconds(5))
+                                .position(Pos.TOP_RIGHT);
+                        notificationBuilder.darkStyle();
+                        notificationBuilder.showWarning();
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
